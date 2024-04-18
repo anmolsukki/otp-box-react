@@ -1,6 +1,6 @@
 {
   "name": "otp-box-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React OTP Box/Input",
   "main": "./build/index.js",
   "scripts": {
