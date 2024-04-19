@@ -7,14 +7,20 @@ export const OtpInput = ({ className, placeholder, name, otpvalue, onChangeOtpHa
   const otpChangeHandler = (event, index) => {
     if (checkInputHandler(event)) {
       if (event.target?.value?.length === otpvalue.length && numRegex?.test(event.target?.value)) {
-        onChangeOtpHandler(event, index);
+        validateOnchangeHandler(event, index);
         inputFocus?.current?.focus();
       } else {
         if (event.target?.value && event.target?.value?.length !== 1) return false;
         if (event.target?.value && event.target.id < otpvalue.length - 1) event.target.nextSibling.focus();
-        onChangeOtpHandler(event, index);
+        validateOnchangeHandler(event, index);
       }
     }
+  };
+
+  const validateOnchangeHandler = (event, index) => {
+    const lengthCheck = event.target?.value?.length === otpvalue?.length;
+    if ((event.nativeEvent.inputType === 'insertFromPaste' && lengthCheck) || lengthCheck) onChangeOtpHandler(event.target.value?.split('') || new Array(otpvalue.length).fill(''), event, index);
+    else onChangeOtpHandler([...otpvalue?.map((el, idx) => (idx === index ? event.target.value : el))], event, index);
   };
 
   const backPressHandler = (el, index) => {
@@ -32,7 +38,7 @@ export const OtpInput = ({ className, placeholder, name, otpvalue, onChangeOtpHa
             ref={inputFocus}
             inputMode="numeric"
             autoComplete="off"
-            type="text"
+            type="number"
             className={className || ''}
             placeholder={placeholder || ''}
             name={name}
