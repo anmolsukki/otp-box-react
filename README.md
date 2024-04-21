@@ -3,7 +3,7 @@
 ## 1.Installation
 
 ```
-npm install -save otp-box-react
+npm install --save otp-box-react
 ```
 
 ```jsx
