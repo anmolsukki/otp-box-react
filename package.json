@@ -1,12 +1,22 @@
 {
   "name": "otp-box-react",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "React OTP Box/Input",
   "main": "./build/index.js",
   "scripts": {
     "build": "webpack"
   },
-  "keywords": ["react", "next", "otp input", "otp box", "otp", "input", "field", "box", "autofill"],
+  "keywords": [
+    "react",
+    "next",
+    "otp input",
+    "otp box",
+    "otp",
+    "input",
+    "field",
+    "box",
+    "autofill"
+  ],
   "author": "anmolsukki",
   "license": "ISC",
   "repository": {

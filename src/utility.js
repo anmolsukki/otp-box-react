@@ -4,7 +4,7 @@ export const numRegex = /^\d+$/;
 // ****************************************** For Name, Number and Input Validation ******************************************
 export const checkInputHandler = (event) => {
   const allowedNum = /^[0-9]*$/;
-  if (!isNaN(event.target.value) && allowedNum.test(event.target.value)) return true;
+  if (allowedNum.test(event.target.value) && event.target?.maxLength >= String(event.target?.value)?.length) return true;
   else return false;
 };
 

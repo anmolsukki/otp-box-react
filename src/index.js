@@ -5,6 +5,8 @@ export const OtpInput = ({ className, placeholder, name, otpvalue, onChangeOtpHa
   const inputFocus = useRef(null);
 
   const otpChangeHandler = (event, index) => {
+    const allowedNum = /^[0-9]*$/;
+    if(!allowedNum.test(event.target.value)) return event.preventDefault();
     if (checkInputHandler(event)) {
       if (event.target?.value?.length === otpvalue.length && numRegex?.test(event.target?.value)) {
         validateOnchangeHandler(event, index);
@@ -38,7 +40,7 @@ export const OtpInput = ({ className, placeholder, name, otpvalue, onChangeOtpHa
             ref={inputFocus}
             inputMode="numeric"
             autoComplete="off"
-            type="number"
+            type="text"
             className={className || ''}
             placeholder={placeholder || ''}
             name={name}
