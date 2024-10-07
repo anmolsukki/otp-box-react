@@ -21,7 +21,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/anmolsukki/otp-box-react"
+    "url": "git+https://github.com/anmolsukki/otp-box-react.git"
   },
   "homepage": "https://github.com/anmolsukki",
   "devDependencies": {
